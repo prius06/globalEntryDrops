@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Global Entry Drops</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+</head>
+<body>
+	<div class="container m-3">
+		<h1 class="title">Global Entry Dorops</h1>
+		<div class="field">
+			<label  class="label">Status</label>
+			<span class="tag is-success">Rnning</span>
+			<span class="tag is-danger">Stopped</span>
+		</div>
+	</div>
+
+	<div class="container m-3">
+	<div class="field">
+		<label  class="label">Location ID</label>
+		<div class="select">
+			<select>
+
+		</select>
+	</div>
+	</div>
+
+	<div class="field">
+		<label for="" class="label">Start date</label>
+		<div class="control">
+			<input type="date"  class="input">
+		</div>
+	</div>
+	
+	<div class="field">
+		<label for="" class="label">End date</label>
+		<div class="control">
+			<input type="date" class="input">
+		</div>
+	</div>
+	
+	<div class="container m-3">
+		<button class="button is-success is-fullwidth" id="startButton">Save & Start</button>
+	</div>
+	
+	<div class="container m-3">
+		<button class="button is-danger is-fullwidth" id="stopButton">Stop</button>
+	</div>
+</div>
+</body>
+<script src="popup.js"></script>
+</html>
