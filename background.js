@@ -2,6 +2,7 @@ import  fetchLocations  from "./api/fetchLocations.js";
 
 chrome.runtime.onInstalled.addListener((details) => {
 	fetchLocations();
+	// console.log("onInstalled reason",details.reason)
 });
 
 chrome.runtime.onMessage.addListener((data) => {

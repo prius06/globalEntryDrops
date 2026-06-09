@@ -20,8 +20,10 @@ stopButton.onclick = () => {
 	chrome.runtime.sendMessage({event: 'onStop'})
 }
 
-chrome.storage.local.get(["locationId","startDate","endDate"],(result) => {
-	const {locationId, startDate, endDate} = result;
+chrome.storage.local.get(["locationId","startDate","endDate","locations"],(result) => {
+	const {locationId, startDate, endDate, locations} = result;
+
+	setLocations(locations);
 
 	if(locationId){
 		locationIdElement.value = locationId
@@ -32,4 +34,14 @@ chrome.storage.local.get(["locationId","startDate","endDate"],(result) => {
 	if(endDate){
 		endDateElement.value = endDate
 	}
-})
+});
+
+// const setLocations: (locations: any) => void
+const setLocations = (locations) => {
+	locations.forEach(location => {
+		let optionElement = document.createElement("option");
+		optionElement.value = location.id;
+		optionElement.innerHTML = location.name;
+		locationIdElement.appendChild(optionElement);
+	});
+}
