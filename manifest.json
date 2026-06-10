@@ -3,7 +3,6 @@
   "name": "Global Emtry Drops",
   "description": "Find global entry intervimm",
   "version": "1.0",
-  "permissions": ["storage"],
   "action": {
     "default_popup": "popup/popup.html"
   },
@@ -16,7 +15,8 @@
     "service_worker": "background.js",
     "type": "module"
   },
-  "host_permissions": [
-    "https://ttp.cbp.dhs.gov/*"
+  "permissions": [
+    "storage",
+    "alarms"
   ]
 }

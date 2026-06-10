@@ -1,5 +1,7 @@
 import  fetchLocations  from "./api/fetchLocations.js";
 
+const ALARM_JOB_NAME = "DROP_ALARM"
+
 chrome.runtime.onInstalled.addListener((details) => {
 	fetchLocations();
 	// console.log("onInstalled reason",details.reason)
@@ -25,7 +27,15 @@ const handleOnStop = () => {
 };
 
 const handleOnStart = (prefs) => {
-	console.log("On start in background");
 	console.log("prefs received:", prefs);
 	chrome.storage.local.set(prefs);
+	createAlarm();
 };
+
+const createAlarm  = () => {
+	chrome.alarms.create(ALARM_JOB_NAME,{periodInMinutes: 1.0})
+}
+
+chrome.alarms.onAlarm.addListener(() => {
+	console.log("onAlarm scheduled code running...")
+})
