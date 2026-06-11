@@ -11,8 +11,8 @@
 		<h1 class="title">Global Entry Dorops</h1>
 		<div class="field">
 			<label  class="label">Status</label>
-			<span class="tag is-success">Rnning</span>
-			<span class="tag is-danger">Stopped</span>
+			<span id="runningSpan" class="tag is-success">Rnning</span>
+			<span id="stopedSpan" class="tag is-danger">Stopped</span>
 		</div>
 	</div>
 
@@ -23,6 +23,8 @@
 			<select id="locationId">
 		</select>
 	</div>
+
+	<p id="locationIdError" class="help is-danger" style="display: none;">Plese select a valid location.</p>
 	</div>
 
 	<div class="field">
@@ -30,6 +32,8 @@
 		<div class="control">
 			<input type="date"  class="input" id="startDate">
 		</div>
+
+		<p id="startDateError" class="help is-danger" style="display:none;">Plese enter a valId start date</p>
 	</div>
 	
 	<div class="field">
@@ -37,6 +41,8 @@
 		<div class="control">
 			<input type="date" class="input" id="endDate">
 		</div>
+
+		<p id="endDateError" class="help is-danger" style="display:none;">Plese enter a valId end date</p>
 	</div>
 	
 	<div class="container m-3">
