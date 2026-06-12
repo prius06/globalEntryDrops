@@ -39,6 +39,10 @@ const handleOnStartState = () => {
 	// Buttons
 	disableElement(startButton);
 	enableElement(stopButton);
+	//Inputs
+	disableElement(locationIdElement)
+	disableElement(startDateElement)
+	disableElement(endDateElement)
 }
 
 const handleOnStopState = () => {
@@ -48,6 +52,10 @@ const handleOnStopState = () => {
 	// Buttons
 	disableElement(stopButton);
 	enableElement(startButton);
+	//Inputs
+	enableElement(locationIdElement);
+	enableElement(startDateElement);
+	enableElement(endDateElement);
 }
 
 const performOnStartValidations = () => {
