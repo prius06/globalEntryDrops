@@ -28,6 +28,15 @@ chrome.runtime.onMessage.addListener((data) => {
 	}
 });
 
+	chrome.notifications.onClicked.addListener(() => {
+		chrome.tabs.create({url: "https://ttp.cbp.dhs.gov/schedulerapi/locations/?temporary=false&inviteOnly=false&operational=true&serviceName=Global%20Entry"})
+	})
+
+chrome.alarms.onAlarm.addListener(() => {
+	console.log("onAlarm scheduled code running...")
+	openSlotsJob();
+})
+
 const handleOnStop = () => {
 	console.log("On stop in background");
 	setRnningStatus(false);
@@ -61,11 +70,6 @@ const createAlarm = () => {
 const stopAlarm = () => {
 	chrome.alarms.clearAll()
 }
-
-chrome.alarms.onAlarm.addListener(() => {
-	console.log("onAlarm scheduled code running...")
-	openSlotsJob();
-})
 
 const openSlotsJob = () => {
 	fetchOpenSlots(cachedPrefs)
